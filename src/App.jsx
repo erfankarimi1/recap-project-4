@@ -2,15 +2,22 @@ import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import "./App.css";
 import { useState } from "react";
+import { nanoid } from "nanoid";
+import { ColorForm } from "./Components/Color/ColorForm";
 
 
 function App() {
-    
-const [colors, setColors] = useState(initialColors);
+  const [colors, setColors] = useState(initialColors);
+    function handleAddColor(data){
+      const newColor = {id : nanoid(), ...data};
+      setColors([newColor, ...colors])
+    }
+
 
   return (
     <main>
       <h1>Theme Creator</h1>
+      <ColorForm  onSubmitColor={handleAddColor} />
       {colors.map((color) => (
         <Color key= {color.id} color={color} />
         ))}
