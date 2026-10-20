@@ -1,13 +1,14 @@
 import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import "./App.css";
-import { useState } from "react";
 import { nanoid } from "nanoid";
 import { ColorForm } from "./Components/Color/ColorForm";
+import useLocalStorageState from "use-local-storage-state";
+
 
 
 function App() {
-  const [colors, setColors] = useState(initialColors);
+  const [colors, setColors] = useLocalStorageState("colors", {defaultValue: initialColors});
     function handleAddColor(data){
       const newColor = {id : nanoid(), ...data};
       setColors([newColor, ...colors])
@@ -15,19 +16,28 @@ function App() {
     function handleDeleteColor(id){
       setColors(colors.filter((color) => color.id !== id));
     }
+    function handleEditColor(updatedColor){
+      setColors(
+        colors.map((color) => 
+          color.id === updatedColor.id ? updatedColor : color)
+      );
+    }
 
 
   return (
     <main>
       <h1>Theme Creator</h1>
+     
+
       
-      <ColorForm  onSubmitColor={handleAddColor} />
+      <ColorForm  onSubmitColor={handleAddColor}   />
       {colors.length === 0 && <p>No Colors ledt. Add a new one </p>}
       {colors.map((color) => (
         <Color 
         key= {color.id} 
         color={color} 
         onDeleteColor={handleDeleteColor}
+        onEditColor={handleEditColor}
         />
         ))}
 

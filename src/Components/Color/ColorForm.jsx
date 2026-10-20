@@ -1,6 +1,6 @@
 import { ColorInput } from "./ColorInput";
 
-export function ColorForm({onSubmitColor,initialData= {role: "some color", hex:"#123456", contrastText: "#ffffff"}})
+export function ColorForm({onSubmitColor,initialData= {role: "some color", hex:"#123456", contrastText: "#ffffff"}, buttonText = "Add Color"})
 {
 
     function handleSubmit(event){
@@ -36,7 +36,7 @@ return(
             <ColorInput name="contrastText" id="constrastText" defaultValue={initialData.contrastText} />
         </label>
         <br />
-        <button type="submit">Add Color</button>
+        <button type="submit">{buttonText}</button>
     </form>
 );
 }
