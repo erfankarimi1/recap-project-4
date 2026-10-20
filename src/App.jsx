@@ -12,14 +12,23 @@ function App() {
       const newColor = {id : nanoid(), ...data};
       setColors([newColor, ...colors])
     }
+    function handleDeleteColor(id){
+      setColors(colors.filter((color) => color.id !== id));
+    }
 
 
   return (
     <main>
       <h1>Theme Creator</h1>
+      
       <ColorForm  onSubmitColor={handleAddColor} />
+      {colors.length === 0 && <p>No Colors ledt. Add a new one </p>}
       {colors.map((color) => (
-        <Color key= {color.id} color={color} />
+        <Color 
+        key= {color.id} 
+        color={color} 
+        onDeleteColor={handleDeleteColor}
+        />
         ))}
 
     </main>
