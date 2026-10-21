@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Color.css";
 import { ColorForm } from "./ColorForm";
 import CopyToClipboard from "../CopyToClipboard";
+import ContrastChecker from "../ContrastChecker";
 
  export default function Color({color , onDeleteColor, onEditColor}) {
   const [isConfirming, setIsConfirming] = useState(false);
@@ -37,6 +38,7 @@ import CopyToClipboard from "../CopyToClipboard";
     <CopyToClipboard text={color.hex} />
     <p><b>Color Name: {color.role}</b></p>
     <p><b>Constrast: {color.contrastText}</b></p>
+    <ContrastChecker hex ={color.hex} contrastText={color.contrastText}/>
     
     {isConfirming ? (
       <>
