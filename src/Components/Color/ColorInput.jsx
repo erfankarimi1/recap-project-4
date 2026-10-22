@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function ColorInput({name, label, defaultValue }){
+export default function  ColorInput({name, label, defaultValue }){
 
     const [value, setValue] = useState(defaultValue);
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Color.css";
-import { ColorForm } from "./ColorForm";
+import  ColorForm  from "./ColorForm";
 import CopyToClipboard from "../CopyToClipboard";
 import ContrastChecker from "../ContrastChecker";
 
@@ -9,6 +9,7 @@ import ContrastChecker from "../ContrastChecker";
   const [isEditing, setIsEditing] = useState(false);
   const cardStyle = {backgroundColor: color.hex, color: color.contrastText};
 
+    
     if(isEditing){
      return(
      <article className="color-card" style={cardStyle}>
@@ -21,7 +22,7 @@ import ContrastChecker from "../ContrastChecker";
         setIsEditing(false);
         }}
       />
-      <button type="button" onClick={() => setIsEditing(false)}>Cancle</button>
+      <button className="Cancel" type="button" onClick={() => setIsEditing(false)}>Cancel</button>
 
     </article>
      )
@@ -34,24 +35,24 @@ import ContrastChecker from "../ContrastChecker";
    return (
     <article className="color-card" style={cardStyle}>
     
-    <h3>{color.hex}</h3>
+    <h3 className="hex-color">{color.hex}</h3>
     <CopyToClipboard text={color.hex} />
-    <p><b>Color Name: {color.role}</b></p>
-    <p><b>Constrast: {color.contrastText}</b></p>
+    <p className="color-name"><b>Color Name: {color.role}</b></p>
+    <p className="constrast-text"><b>Constrast: {color.contrastText}</b></p>
     <ContrastChecker hex ={color.hex} contrastText={color.contrastText}/>
     
     {isConfirming ? (
       <>
         <p className="color-card-highlight">Are sure about deleting this Color 🤔?</p>
-        <button type="button" onClick={() => setIsConfirming(false)}>
-          Cancle 😰
+        <button className="delete-question" type="button" onClick={() => setIsConfirming(false)}>
+          Cancel 😰
         </button>
-        <button type="button" onClick={() => onDeleteColor(color.id)}>Yes ␡ Delete </button>
+        <button className="yes-delete-button" type="button" onClick={() => onDeleteColor(color.id)}>Yes ␡ Delete </button>
       </>
     ) : (
       <>
-        <button type="button" onClick={() => setIsConfirming(true)}>Delete ␡</button>
-        <button type="button" onClick={() => setIsEditing(true)}>Edit ✍️</button>
+        <button className="delete-button" type="button" onClick={() => setIsConfirming(true)}>Delete ␡</button>
+        <button className="edit-button" type="button" onClick={() => setIsEditing(true)}>Edit ✍️</button>
         </>
     )}
     </article>
