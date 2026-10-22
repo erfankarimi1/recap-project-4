@@ -25,15 +25,15 @@ export default function ContrastChecker({ hex, contrastText}) {
   );
 
     if(isLoading){
-        return <h1> Checking Contrast...</h1>
+        return <h1 className='checking-contrast-text'> Checking Contrast...</h1>
     }
     if(error || !data){
-        return <h1>Could not check Contrast</h1>
+        return <h1 className='error-text'>Could not check Contrast</h1>
     }
 
     return (
 <main>
- <p><b>Overall Contrast Score: {getContrastRating(data)}</b></p>
+ <p className='contrast-checker'><b>Overall Contrast Score: {getContrastRating(data)}</b></p>
 </main>
   );
 }

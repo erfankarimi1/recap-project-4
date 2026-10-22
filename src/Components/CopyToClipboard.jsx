@@ -17,7 +17,7 @@ useEffect(() => {
 
 return(
     <>
-    <button type="button" onClick={handleCopy}>
+    <button className="copy-button" type="button" onClick={handleCopy}>
         Copy
     </button>
     {isCopied && <span>Copied</span>}

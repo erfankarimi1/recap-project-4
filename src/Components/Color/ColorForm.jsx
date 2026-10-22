@@ -1,6 +1,6 @@
-import { ColorInput } from "./ColorInput";
+import  ColorInput  from "./ColorInput";
 
-export function ColorForm({onSubmitColor,initialData= {role: "some color", hex:"#123456", contrastText: "#ffffff"}, buttonText = "Add Color"})
+export default function ColorForm({onSubmitColor,initialData= {role: "some color", hex:"#123456", contrastText: "#ffffff"}, buttonText = "Add Color"})
 {
 
     function handleSubmit(event){

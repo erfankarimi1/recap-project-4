@@ -1,5 +1,21 @@
+export const initialThemes = [
+  {
+    id: "t1",
+    name: "Default Theme",
+    colors: ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9"],
+  },
+  {
+    id: "t2",
+    name: "2nd Theme",
+    colors: ["c10", "c11", "c12"],
+  },
+];
 export const initialColors = [
-  { id: "c1", role: "primary main", hex: "#ff4a11", contrastText: "#FFFFFF" }, // Vibrant orange
+  { id: "c1",
+    role: "primary main",
+    hex: "#ff4a11",
+    contrastText: "#FFFFFF"
+   }, // Vibrant orange
   { id: "c2", role: "primary dark", hex: "#c73e0b", contrastText: "#FFFFFF" }, // Darker shade of orange
   { id: "c3", role: "primary light", hex: "#ff7a3e", contrastText: "#000000" }, // Lighter shade of orange
   { id: "c4", role: "secondary main", hex: "#5C6BC0", contrastText: "#FFFFFF" }, // Indigo Blue
@@ -28,4 +44,23 @@ export const initialColors = [
     hex: "#43464b",
     contrastText: "#FFFFFF",
   }, // Lighter charcoal
+  {
+    id: "c10", 
+    role: "text main",
+    hex: "#FFFFFF",
+    contrastText: "#00000 ",  
+  },
+  {
+    id: "c11",
+    role: "text dark",
+    hex: "#FFFFFF",
+    contrastText: "#000000",
+
+  },
+  {
+    id: "c12",
+    role: "text light",
+    hex: "#FFFFFF",
+    contrastText: "#000000",
+  },
 ];
