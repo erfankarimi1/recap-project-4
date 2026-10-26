@@ -1,11 +1,30 @@
 body {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   padding: 10px;
-  background-color: #fafaf7;
+  background-color: #95a5ed;
   color: #242720;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .color-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e5edef;
+  border-radius: 10px;
+  padding: 5px;
+  
+}
+.add-cards{
+  display: flex;
+  border: 2px solid #e5edef;
+  border-radius: 10px;
+  padding: 5px;
+  justify-content: space-between;
+ 
 }

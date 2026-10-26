@@ -92,7 +92,8 @@ function handleSelectTheme(id){
 
   return (
     <main>
-      <h1>Theme Creator</h1>
+      <header className="header">
+      <h1 className="title">Theme Creator</h1>
      {/* Use callbacks so these state updates run only after a button click. - Copilot  here is my comment it's 3:51 am  */ }
       <ThemeBar 
         themes={themes}
@@ -124,13 +125,16 @@ function handleSelectTheme(id){
           </button>
         </div>
       )}
-      
+      </header>
 
+      <div className="add-cards">
+      <h2 className="add-cards-title">Add Color</h2>
       <ColorForm onSubmitColor={handleAddColor} />
 
       {themeColors.length === 0 && 
       <p>No Colors left. Add a new one </p>}
 
+      </div>  
     <section className="color-grid" >
       {themeColors.map((color) => (
         <Color 
